@@ -1,6 +1,6 @@
 streamlit
-numpy==1.26.4
-tensorflow==2.16.1
+numpy
+tensorflow
 yfinance
 pandas
 joblib
