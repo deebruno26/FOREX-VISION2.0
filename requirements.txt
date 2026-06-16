@@ -4,3 +4,4 @@ tensorflow==2.16.1
 yfinance
 pandas
 joblib
+vaderSentiment
