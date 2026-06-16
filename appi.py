@@ -12,7 +12,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # ----------------------------------
 st.set_page_config(
     page_title="AI Forex Market Intelligence System",
-    page_icon="📊", 
+    page_icon="", 
     layout="wide"
 )
 
@@ -24,17 +24,18 @@ st.title("AI Forex Market Intelligence System")
 # ----------------------------------
 # LOAD MODEL
 # ----------------------------------
+
 @st.cache_resource
 def load_selected_model(pair):
     models = {
-        "USDCHF": "usdchf_model.h5",
-        "EURUSD": "eurusd_model.h5",
-        "GBPUSD": "gbpusd_model.h5",
-        "USDJPY": "usdjpy_model.h5"
+        "USDCHF": "usdchf_model.keras",
+        "EURUSD": "eurusd_model.keras",
+        "GBPUSD": "gbpusd_model.keras",
+        "USDJPY": "usdjpy_model.keras"
     }
 
-    # FIX: Add safe_mode=False to allow loading older .h5 models in newer Keras versions
-    return load_model(models[pair], compile=False, safe_mode=False)
+    # The .keras format loads cleanly without extra flags
+    return load_model(models[pair], compile=False)
 ### models = {
         #"USDCHF": "usdchf_model.h5",
        # "EURUSD": "eurusd_model.h5",
