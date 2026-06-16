@@ -21,6 +21,9 @@ st.title("AI Forex Market Intelligence System")
 # ----------------------------------
 # LOAD MODEL
 # ----------------------------------
+# ----------------------------------
+# LOAD MODEL
+# ----------------------------------
 @st.cache_resource
 def load_selected_model(pair):
     models = {
@@ -29,11 +32,21 @@ def load_selected_model(pair):
         "GBPUSD": "gbpusd_model.h5",
         "USDJPY": "usdjpy_model.h5"
     }
-    return load_model(models[pair], compile=False)
+
+    # FIX: Add safe_mode=False to allow loading older .h5 models in newer Keras versions
+    return load_model(models[pair], compile=False, safe_mode=False)
+### models = {
+        #"USDCHF": "usdchf_model.h5",
+       # "EURUSD": "eurusd_model.h5",
+       # "GBPUSD": "gbpusd_model.h5",
+       # "USDJPY": "usdjpy_model.h5"
+    #}
+    #return load_model(models[pair], compile=False)
 
 # ----------------------------------
 # LOAD SCALER
 # ----------------------------------
+
 @st.cache_resource
 def load_scaler(pair):
     scalers = {
