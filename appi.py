@@ -25,24 +25,26 @@ st.title("AI Forex Market Intelligence System")
 # LOAD MODEL
 # ----------------------------------
 
+#@st.cache_resource
+#def load_selected_model(pair):
+  ##  models = {
+    #    "USDCHF": "usdchf_model.keras",
+   #     "EURUSD": "eurusd_model.keras",
+  #      "GBPUSD": "gbpusd_model.keras",
+  #      "USDJPY": "usdjpy_model.keras"
+ #   }
+
+    # The .keras format loads cleanly without extra flags
+   # return load_model(models[pair], compile=False)
 @st.cache_resource
 def load_selected_model(pair):
     models = {
-        "USDCHF": "usdchf_model.keras",
-        "EURUSD": "eurusd_model.keras",
-        "GBPUSD": "gbpusd_model.keras",
-        "USDJPY": "usdjpy_model.keras"
+        "USDCHF": "usdchf_model.h5",
+        "EURUSD": "eurusd_model.h5",
+        "GBPUSD": "gbpusd_model.h5",
+        "USDJPY": "usdjpy_model.h5"
     }
-
-    # The .keras format loads cleanly without extra flags
     return load_model(models[pair], compile=False)
-### models = {
-        #"USDCHF": "usdchf_model.h5",
-       # "EURUSD": "eurusd_model.h5",
-       # "GBPUSD": "gbpusd_model.h5",
-       # "USDJPY": "usdjpy_model.h5"
-    #}
-    #return load_model(models[pair], compile=False)
 
 # ----------------------------------
 # LOAD SCALER
