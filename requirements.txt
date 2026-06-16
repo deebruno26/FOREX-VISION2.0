@@ -1,8 +1,9 @@
 streamlit
-numpy==1.23.5
-pandas
-yfinance
 joblib
-tensorflow==2.10.0
 vaderSentiment
 requests
+numpy==1.26.4
+tensorflow==2.16.1
+keras==3.3.3
+yfinance
+pandas
