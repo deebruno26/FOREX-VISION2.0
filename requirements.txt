@@ -1,9 +1,5 @@
 streamlit
-joblib
-vaderSentiment
-requests
 numpy==1.26.4
 tensorflow==2.16.1
-keras==3.3.3
 yfinance
 pandas
