@@ -39,12 +39,21 @@ st.title("AI Forex Market Intelligence System")
 @st.cache_resource
 def load_selected_model(pair):
     models = {
-        "USDCHF": "usdchf_model.h5",
-        "EURUSD": "eurusd_model.h5",
-        "GBPUSD": "gbpusd_model.h5",
-        "USDJPY": "usdjpy_model.h5"
+        "USDCHF": "usdchf_model_v2.h5",  # Added _v2
+        "EURUSD": "eurusd_model_v2.h5",  # Added _v2
+        "GBPUSD": "gbpusd_model_v2.h5",  # Added _v2
+        "USDJPY": "usdjpy_model_v2.h5"   # Added _v2
     }
     return load_model(models[pair], compile=False)
+#@st.cache_resource
+#def load_selected_model(pair):
+ #   models = {
+  #      "USDCHF": "usdchf_model.h5",
+  #      "EURUSD": "eurusd_model.h5",
+  #      "GBPUSD": "gbpusd_model.h5",
+    #    "USDJPY": "usdjpy_model.h5"
+   # }
+  #  return load_model(models[pair], compile=False)
 
 # ----------------------------------
 # LOAD SCALER
